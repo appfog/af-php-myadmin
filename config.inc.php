@@ -1,5 +1,11 @@
 <?php
-
+$cfg['ShowChgPassword'] = false;
+$cfg['VersionCheck'] = false;
+$cfg['OBGzip'] = 'auto';
+$cfg['ShowServerInfo'] = false;
+$cfg['ShowStats'] = false;
+$cfg['ShowCreateDb'] = false;
+$cfg['Error_Handler']['display'] = false;
 
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
@@ -34,7 +40,7 @@ $mysql_config = $E["credentials"];
 $i++;
 $g = $i-1;
 /* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'config';
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = $mysql_config["hostname"];
 $cfg['Servers'][$i]['connect_type'] = 'tcp';
@@ -43,7 +49,9 @@ $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['extension'] = 'mysqli';
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 $cfg['Servers'][$i]['user'] =  $mysql_config["username"];
-$cfg['Servers'][$i]['password'] =  $mysql_config["password"]; 
+$cfg['Servers'][$i]['password'] =  $mysql_config["password"];
+$cfg['Servers'][$i]['hide_db'] = 'information_schema';
+$cfg['Servers'][$i]['ShowDatabasesCommand'] = 'SELECT DISTINCT TABLE_SCHEMA FROM information_schema.SCHEMA_PRIVILEGES';
 }
 
 
