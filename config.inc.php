@@ -40,6 +40,7 @@ $mysql_config = $E["credentials"];
 $i++;
 $g = $i-1;
 /* Authentication type */
+// Set 'auth_type' to config for cloud foundry and VCAP_SERVICES
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = $mysql_config["hostname"];
