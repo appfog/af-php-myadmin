@@ -48,37 +48,23 @@ Requirements
 
 Summary
 -------
+In this branch of phpMyAdmin (specific to use with cloudfoundry based PaaS) you 
+will need to modify the htpasswd file before pushing your application to the 
+cloud.
 
-phpMyAdmin is intended to handle the administration of MySQL over the web.
-For a summary of features, please see the Documentation.txt/.html file.
-
-Download
---------
-
-You can get the newest version at http://www.phpmyadmin.net/.
-
-More Information
-----------------
-
-Please see the Documentation.txt/.html file.
-
-Support
+Steps
 -------
 
-See reference about support forums under http://www.phpmyadmin.net/
+1. Clone this repo locally => 
+git clone https://github.com/appfog/af-php-myadmin.git
 
+2. Cd into the git repository => 
+cd af-php-myadmin/
 
-Enjoy!
-------
+3. run htpasswd to set your basic auth => 
+htpasswd .htpasswd <username>
 
-The phpMyAdmin Devel team
+4. Push the application to your cloud foundry based PaaS => 
+af push <app_name> 
 
-
-PS:
-
-Please, don't send us emails with question like "How do I compile PHP with
-MySQL-support". We just don't have the time to be your free help desk.
-
-Please send your questions to the appropriate mailing lists / forums.  Before
-contacting us, please read the Documentation.html (esp. the FAQ part).
-
+4a. Remember to bind the database you want to manage to this app!
