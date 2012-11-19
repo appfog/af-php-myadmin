@@ -93,7 +93,8 @@ function PMA_buildHtmlForDb($current, $is_superuser, $checkall, $url_query, $col
            . urlencode($current['SCHEMA_NAME']) . '" title="'
            . sprintf(__('Jump to database'), htmlspecialchars($current['SCHEMA_NAME']))
            . '" target="_parent">'
-           . ' ' . htmlspecialchars($current['SCHEMA_NAME'])
+           . ' ' . htmlspecialchars(!empty($GLOBALS['cfg']['Servers'][$GLOBALS['server']]['verbose']) ? $GLOBALS['cfg']['Servers'][$GLOBALS['server']]['verbose'] : $GLOBALS['cfg']['Servers'][$GLOBALS['server']]['host'])
+           . ' - (' . htmlspecialchars($current['SCHEMA_NAME']) . ')'
            . '</a>'
            . '</td>';
 

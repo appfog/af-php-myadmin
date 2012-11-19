@@ -29,12 +29,12 @@ function PMA_select_server($not_only_options, $ommit_fieldset)
         if (! $ommit_fieldset) {
             echo '<fieldset>';
         }
-        echo '<label for="select_server">' . __('Current Server') . ':</label> ';
+        echo '<label for="select_server">' . __('Current Service') . ':</label> ';
 
         echo '<select name="server" id="select_server" class="autosubmit">';
-        echo '<option value="">(' . __('Servers') . ') ...</option>' . "\n";
+        echo '<option value="">(' . __('Services') . ') ...</option>' . "\n";
     } elseif ($list) {
-        echo __('Current Server') . ':<br />';
+        echo __('Current Service') . ':<br />';
         echo '<ul id="list_server">';
     }
 
@@ -55,17 +55,6 @@ function PMA_select_server($not_only_options, $ommit_fieldset)
             if (!empty($server['port'])) {
                 $label .= ':' . $server['port'];
             }
-        }
-        if (! empty($server['only_db'])) {
-            if (! is_array($server['only_db'])) {
-                $label .= ' - ' . $server['only_db'];
-            // try to avoid displaying a too wide selector
-            } elseif (count($server['only_db']) < 4) {
-                $label .= ' - ' . implode(', ', $server['only_db']);
-            }
-        }
-        if (!empty($server['user']) && $server['auth_type'] == 'config') {
-            $label .= '  (' . $server['user'] . ')';
         }
 
         if ($list) {
