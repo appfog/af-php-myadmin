@@ -1,5 +1,0 @@
-AuthType Basic
-AuthName "Remember to set a Username and Password in .htpasswd"
-AuthUserFile ../app/.htpasswd
-Require valid-user
-
