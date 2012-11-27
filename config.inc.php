@@ -44,6 +44,7 @@ $g = $i-1;
 $cfg['Servers'][$i]['auth_type'] = 'config';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = $mysql_config["hostname"];
+$cfg['Servers'][$i]['verbose'] = $E["name"];
 $cfg['Servers'][$i]['connect_type'] = 'tcp';
 $cfg['Servers'][$i]['compress'] = false;
 /* Select mysql if your server does not have mysqli */
@@ -51,6 +52,7 @@ $cfg['Servers'][$i]['extension'] = 'mysqli';
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 $cfg['Servers'][$i]['user'] =  $mysql_config["username"];
 $cfg['Servers'][$i]['password'] =  $mysql_config["password"];
+$cfg['Servers'][$i]['only_db'] = $mysql_config["name"];
 $cfg['Servers'][$i]['hide_db'] = 'information_schema';
 $cfg['Servers'][$i]['ShowDatabasesCommand'] = 'SELECT DISTINCT TABLE_SCHEMA FROM information_schema.SCHEMA_PRIVILEGES';
 }
