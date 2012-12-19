@@ -1,0 +1,16 @@
+---
+applications:
+  .:
+    name: pmaadmin
+    framework:
+      name: php
+      info:
+        mem: 128M
+        description: PHP Application
+        exec: 
+    url: ${name}.${target-base}
+    mem: 128M
+    instances: 1
+    services:
+      sdhstudios:
+        type: mysql
